@@ -1,0 +1,125 @@
+Buatkan landing page clean minimalis seperti PayPal, menggunakan HTML + CSS + JS murni, tanpa framework. Struktur halaman sebagai berikut:
+
+1. Hero Section (Bagian Atas)
+
+Background putih, gaya minimalis.
+
+Tampilkan judul: “Bayar Layanan Internasional Dengan Mudah – dibayar.in”
+
+Subjudul singkat: “Masukkan nominal USD, lihat total IDR otomatis.”
+
+Fitur utama di bagian ini:
+
+Input: “Nominal USD” (type number).
+
+Setelah diisi, tampilkan otomatis:
+
+Kurs dasar (ambil dari API exchangerate.host).
+
+Kurs setelah markup 2% → kurs × 1.02
+
+Fee tetap → Rp50.000
+
+Total Rupiah = (usd × kurs_aman) + 50000
+
+Tampilkan total bayar dengan font besar dan tebal.
+
+Jika belum diisi → tampilkan “—”.
+
+2. Section Langkah Pemesanan
+
+Judul: Cara Kerja
+Tampilkan 5 langkah sederhana dalam layout horizontal / grid minimalis:
+
+Pilih Platform
+
+Hubungi Admin
+
+Lakukan Pembayaran
+
+Admin Proses Pembayaran Anda
+
+Selesai
+
+Gunakan ikon simpel atau bulatan angka.
+
+3. Section Form Order
+
+Judul: Form Pemesanan
+
+Field yang harus ada:
+
+Nama (text)
+
+Platform (select dropdown):
+
+Zai
+
+Coder
+
+Claude
+
+ChatGPT
+
+Gemini
+
+Minimax
+
+Lainnya
+
+Nominal USD (number)
+
+Setelah angka USD diinput → tampilkan otomatis Total Bayar IDR berdasarkan rumus markup 2% + fee Rp50.000.
+
+Tambahkan gambar QRIS:
+
+Gunakan file qris.jpg
+
+Posisikan rapi, clean, tidak terlalu besar.
+
+Tombol Order:
+
+Label: “Konfirmasi Via WhatsApp”
+
+Saat ditekan → buka WhatsApp dengan link berikut:
+
+https://wa.me/628xxxxxxxxxx?text=Nama:%20[name]%0APlatform:%20[platform]%0ANominal%20USD:%20[x]%0ATotal%20Bayar%20IDR:%20[y]
+
+
+Ganti [name], [platform], [x], [y] dengan value form secara dinamis via JavaScript.
+
+4. Style (CSS)
+
+Instruksi:
+
+Desain minimalis seperti PayPal.
+
+Gunakan font Inter atau system-ui.
+
+Banyak whitespace, bentuk card putih, bayangan lembut.
+
+Border radius halus (8px).
+
+Warna dominan: putih, abu-abu muda, biru lembut (#0070ba style PayPal).
+
+Tombol biru dengan hover gelap sedikit.
+
+5. JavaScript Logic
+
+Ambil kurs dari https://api.exchangerate.host/latest?base=USD&symbols=IDR
+
+Hitung kurs_aman = kurs × 1.02
+
+Hitung total = (usd × kurs_aman) + 50000
+
+Update total secara real-time.
+
+Saat klik WA button → kirim data form ke URL WA.
+
+6. Output yang diharapkan
+
+Berikan seluruh kode lengkap, 1 file: index.html
+
+Sudah termasuk HTML, CSS (embed <style>), dan JS (embed <script>).
+
+Tinggal upload ke Netlify langsung.
