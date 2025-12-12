@@ -1,0 +1,29 @@
+KATEGORI,KEYWORD,TIPE,VOLUME_ESTIMASI,KOMPETISI,INTENT,PRIORITAS,STRATEGI_KONTEN
+SHORT TAIL,payment gateway,Short Tail,Tinggi,Tinggi,Informasi,P0,Blog review komprehensif + landing page
+SHORT TAIL,pembayaran internasional,Short Tail,Tinggi,Tinggi,Informasi,P0,Landing page + comparison guide
+SHORT TAIL,payment solution,Short Tail,Tinggi,Tinggi,Informasi,P0,Landing page dengan demo interaktif
+SHORT TAIL,transfer uang luar negeri,Short Tail,Tinggi,Tinggi,Informasi,P0,Blog + calculator tools
+SHORT TAIL,jasa pembayaran,Short Tail,Tinggi,Tinggi,Informasi,P0,Landing page lengkap
+SHORT TAIL,solusi pembayaran online,Short Tail,Sedang,Sedang,Informasi,P1,Blog artikel mendalam
+SHORT TAIL,payment processing,Short Tail,Sedang,Sedang,Informasi,P1,Technical documentation
+MEDIUM TAIL,pembayaran tanpa kartu kredit,Medium Tail,Sedang,Sedang,Transaksional,P0,Landing page + case studies
+MEDIUM TAIL,cara membayar di luar negeri,Medium Tail,Sedang,Sedang,Informasi,P0,Step-by-step guide + video
+MEDIUM TAIL,jasa bayar langganan internasional,Medium Tail,Sedang,Rendah-Sedang,Transaksional,P1,Landing page + testimonial
+MEDIUM TAIL,payment gateway terbaik Indonesia,Medium Tail,Sedang,Tinggi,Informasi,P0,Comparison article + ranking
+MEDIUM TAIL,pembayaran gaji internasional,Medium Tail,Sedang,Sedang,Informasi,P2,B2B content + case study
+MEDIUM TAIL,cara transfer uang ke luar negeri,Medium Tail,Sedang,Sedang,Informasi,P0,Guide komprehensif + tools
+MEDIUM TAIL,pembayaran online fee murah,Medium Tail,Sedang,Rendah,Transaksional,P0,Landing page + comparison
+MEDIUM TAIL,alternatif pembayaran kartu kredit,Medium Tail,Sedang,Sedang,Informasi,P1,Comprehensive guide
+MEDIUM TAIL,bayar layanan online tanpa kartu kredit,Medium Tail,Sedang,Rendah,Transaksional,P1,Solution-focused article
+LONG TAIL,pembayaran internasional tanpa kartu kredit fee murah,Long Tail,Rendah-Sedang,Rendah,Transaksional,P0,Detailed guide + comparison table
+LONG TAIL,jasa pembayaran international untuk yang tidak punya kartu kredit,Long Tail,Rendah,Sangat Rendah,Transaksional,P1,Landing page khusus + FAQ
+LONG TAIL,cara membayar subscription internasional tanpa kartu kredit,Long Tail,Rendah-Sedang,Rendah,Transaksional,P0,Step-by-step tutorial
+LONG TAIL,payment gateway Indonesia dengan fee paling murah,Long Tail,Rendah-Sedang,Rendah,Transaksional,P1,Comparison table + calculator
+LONG TAIL,layanan pembayaran internasional aman dan terpercaya Indonesia,Long Tail,Rendah,Rendah,Transaksional,P1,Trust-focused article + reviews
+LONG TAIL,bagaimana cara bayar PayPal tanpa kartu kredit Indonesia,Long Tail,Rendah-Sedang,Rendah,Transaksional,P0,Tutorial + alternatives guide
+LONG TAIL,pembayaran AI tools ChatGPT tanpa kartu kredit Indonesia,Long Tail,Rendah,Sangat Rendah,Transaksional,P0,Trending topic + solution guide
+LONG TAIL,payment gateway untuk UMKM tanpa modal awal,Long Tail,Rendah,Rendah,Transaksional,P2,UMKM-focused guide
+LONG TAIL,jasa bayar subscription software internasional murah,Long Tail,Rendah-Sedang,Rendah,Transaksional,P2,Detailed comparison
+LONG TAIL,pembayaran cross border Indonesia dengan biaya terendah,Long Tail,Rendah-Sedang,Rendah,Transaksional,P1,Analysis + calculator tools
+HYPER LOCAL,pembayaran internasional jakarta murah fee tetap,Hyper Local,Sangat Rendah,Sangat Rendah,Transaksional,P2,Local case study + testimonial
+HYPER LOCAL,jasa bayar langganan online jakarta medan surabaya,Hyper Local,Sangat Rendah,Sangat Rendah,Transaksional,P3,Location-specific landing page
