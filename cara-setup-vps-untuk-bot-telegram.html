@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara Setup VPS untuk Bot Telegram: Panduan Lengkap dari Install hingga 24/7 Running | dibayar.in</title>
+    <meta name="description"
+        content="Panduan lengkap cara setup VPS untuk bot Telegram. Dari pemilihan VPS, install dependensi, deploy bot, sampai bot Telegram running 24/7 dengan systemd/PM2.">
+    <meta name="keywords"
+        content="setup VPS untuk bot Telegram, deploy bot Telegram di VPS, bot Telegram 24/7, hosting bot Telegram, VPS untuk Telegram bot">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dibayar.in/cara-setup-vps-untuk-bot-telegram.html">
+    <meta name="author" content="dibayar.in">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dibayar.in/cara-setup-vps-untuk-bot-telegram.html">
+    <meta property="og:title" content="Cara Setup VPS untuk Bot Telegram: Panduan Lengkap">
+    <meta property="og:description"
+        content="Tutorial lengkap setup VPS untuk bot Telegram dari awal sampai 24/7 running.">
+    <meta property="og:locale" content="id_ID">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Cara Setup VPS untuk Bot Telegram: Panduan Lengkap dari Install hingga 24/7 Running",
+        "author": { "@type": "Organization", "name": "dibayar.in" },
+        "publisher": { "@type": "Organization", "name": "dibayar.in" },
+        "datePublished": "2025-01-27",
+        "dateModified": "2025-01-27"
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.7;
+            margin: 0
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 24px 20px
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0070ba;
+            margin-bottom: 24px;
+            display: inline-block
+        }
+
+        .logo span {
+            color: #2c3e50
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: #95a5a6;
+            margin-bottom: 20px
+        }
+
+        .breadcrumb a {
+            color: #0070ba
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            line-height: 1.3
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 28px;
+            margin-bottom: 8px
+        }
+
+        h3 {
+            font-size: 17px;
+            margin-top: 20px;
+            margin-bottom: 6px
+        }
+
+        p {
+            color: #6c7a89;
+            margin-bottom: 12px
+        }
+
+        ul,
+        ol {
+            color: #6c7a89;
+            margin-left: 20px;
+            margin-bottom: 12px
+        }
+
+        li {
+            margin-bottom: 6px
+        }
+
+        .highlight-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #e74c3c
+        }
+
+        .steps-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05)
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e6ed
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: #0070ba;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .step-content h4 {
+            margin: 0 0 4px 0;
+            color: #2c3e50;
+            font-size: 16px
+        }
+
+        .step-content p {
+            margin: 0;
+            font-size: 14px
+        }
+
+        .cta-box {
+            margin-top: 32px;
+            padding: 24px;
+            border-radius: 12px;
+            background: #e8f4fc
+        }
+
+        .btn-wa {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 14px 24px;
+            border-radius: 8px;
+            background: #25D366;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px
+        }
+
+        .btn-wa:hover {
+            background: #20bd5a
+        }
+
+        .note {
+            font-size: 13px;
+            color: #95a5a6;
+            margin-top: 16px
+        }
+
+        .related {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid #e0e6ed
+        }
+
+        .related h3 {
+            font-size: 18px;
+            margin-bottom: 16px
+        }
+
+        .related-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .related-links a {
+            color: #0070ba;
+            font-size: 14px
+        }
+
+        .related-links a:hover {
+            text-decoration: underline
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="logo">dibayar<span>.in</span></a>
+
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> › <a href="vps-murah-untuk-bot-10-provider-indonesia-termurah.html">VPS</a> ›
+            Setup VPS untuk Bot Telegram
+        </nav>
+
+        <h1>Cara Setup VPS untuk Bot Telegram: Panduan Lengkap dari Install hingga 24/7 Running</h1>
+        <p>
+            Panduan lengkap cara <strong>setup VPS untuk bot Telegram</strong> dari awal sampai bot berjalan 24/7.
+            Mulai dari pemilihan VPS, install dependensi, deploy bot Python/Node.js, sampai konfigurasi auto-restart
+            dengan PM2 atau systemd.
+        </p>
+
+        <div class="highlight-box">
+            <strong>💡 Kenapa VPS untuk Bot Telegram?</strong> VPS memastikan bot Telegram Anda selalu online
+            24/7, tidak tergantung laptop/PC yang harus selalu menyala. Lebih reliable dan scalable.
+        </div>
+
+        <h2>Prerequisites</h2>
+        <ul>
+            <li><strong>Bot Telegram:</strong> Sudah dibuat via @BotFather</li>
+            <li><strong>Bot Token:</strong> Sudah dapat dari @BotFather</li>
+            <li><strong>VPS:</strong> Ubuntu 20.04/22.04 atau Debian (minimal 512MB RAM, 1GB recommended)</li>
+            <li><strong>Basic Linux:</strong> Familiar dengan SSH dan command line</li>
+        </ul>
+
+        <h2>Langkah 1: Setup VPS</h2>
+
+        <h3>1.1 Sewa VPS</h3>
+        <p>
+            Pilih provider VPS yang sesuai budget dan lokasi. Rekomendasi untuk bot Telegram:
+        </p>
+        <ul>
+            <li><strong>AWS Lightsail:</strong> $3.50/bulan (512MB RAM) - Paling murah</li>
+            <li><strong>Linode:</strong> $5/bulan (1GB RAM, Singapore) - Balance choice</li>
+            <li><strong>DigitalOcean:</strong> $6/bulan (1GB RAM) - User-friendly</li>
+            <li><strong>Hetzner:</strong> €4.60/bulan (2GB RAM) - Best value</li>
+        </ul>
+        <p>
+            <em>Tidak punya kartu kredit untuk sewa VPS? <a href="https://wa.me/6282347303153" target="_blank">dibayar.in</a>
+            siap membantu!</em>
+        </p>
+
+        <h3>1.2 Connect ke VPS via SSH</h3>
+        <ul>
+            <li>Dapatkan IP address VPS dari provider</li>
+            <li>Connect: <code>ssh root@your-vps-ip</code></li>
+            <li>Masukkan password atau gunakan SSH key</li>
+        </ul>
+
+        <h3>1.3 Initial Setup</h3>
+        <ul>
+            <li>Update system: <code>apt update && apt upgrade -y</code></li>
+            <li>Setup firewall: <code>ufw allow OpenSSH && ufw enable</code></li>
+            <li>Create non-root user (recommended): <code>adduser botuser && usermod -aG sudo botuser</code></li>
+        </ul>
+
+        <h2>Langkah 2: Install Dependensi</h2>
+
+        <h3>2.1 Install Python (untuk Bot Python)</h3>
+        <ul>
+            <li>Python 3 biasanya sudah terinstall: <code>python3 --version</code></li>
+            <li>Jika belum: <code>apt install python3 python3-pip -y</code></li>
+            <li>Install virtual environment: <code>apt install python3-venv -y</code></li>
+        </ul>
+
+        <h3>2.2 Install Node.js (untuk Bot Node.js)</h3>
+        <ul>
+            <li><code>curl -fsSL https://deb.nodesource.com/setup_18.x | bash -</code></li>
+            <li><code>apt install nodejs -y</code></li>
+            <li>Verify: <code>node --version && npm --version</code></li>
+        </ul>
+
+        <h3>2.3 Install Git</h3>
+        <ul>
+            <li><code>apt install git -y</code></li>
+        </ul>
+
+        <h2>Langkah 3: Deploy Bot Telegram</h2>
+
+        <h3>3.1 Clone Bot Code</h3>
+        <ul>
+            <li>Switch ke bot user: <code>su - botuser</code></li>
+            <li>Clone repository: <code>git clone https://github.com/your-username/your-telegram-bot.git</code></li>
+            <li>Enter directory: <code>cd your-telegram-bot</code></li>
+        </ul>
+
+        <h3>3.2 Setup Environment Variables</h3>
+        <ul>
+            <li>Buat file <code>.env</code>: <code>nano .env</code></li>
+            <li>Add konfigurasi:
+                <ul>
+                    <li><code>TELEGRAM_BOT_TOKEN=your_bot_token_from_botfather</code></li>
+                    <li><code>API_KEY=your_api_key_if_needed</code></li>
+                    <li><code>DATABASE_URL=your_database_url_if_needed</code></li>
+                </ul>
+            </li>
+            <li>Save dan exit (Ctrl+X, Y, Enter)</li>
+        </ul>
+
+        <h3>3.3 Install Dependencies</h3>
+        <p>
+            <strong>Untuk Python Bot:</strong>
+        </p>
+        <ul>
+            <li>Create venv: <code>python3 -m venv venv</code></li>
+            <li>Activate: <code>source venv/bin/activate</code></li>
+            <li>Install: <code>pip install -r requirements.txt</code></li>
+        </ul>
+
+        <p>
+            <strong>Untuk Node.js Bot:</strong>
+        </p>
+        <ul>
+            <li><code>npm install</code></li>
+        </ul>
+
+        <h3>3.4 Test Run Bot</h3>
+        <p>
+            <strong>Python:</strong> <code>python3 bot.py</code><br>
+            <strong>Node.js:</strong> <code>npm start</code>
+        </p>
+        <p>
+            Buka Telegram, kirim pesan ke bot. Jika bot merespon, berarti berhasil!
+        </p>
+        <p>
+            Tekan <code>Ctrl+C</code> untuk stop bot (kita akan setup auto-start nanti).
+        </p>
+
+        <h2>Langkah 4: Setup Process Manager (PM2)</h2>
+        <p>
+            PM2 memastikan bot auto-restart jika crash dan auto-start setelah VPS reboot.
+        </p>
+
+        <h3>4.1 Install PM2</h3>
+        <ul>
+            <li><code>npm install -g pm2</code></li>
+        </ul>
+
+        <h3>4.2 Start Bot dengan PM2</h3>
+        <p>
+            <strong>Untuk Python Bot:</strong>
+        </p>
+        <ul>
+            <li><code>pm2 start python3 --name telegram-bot -- bot.py</code></li>
+        </ul>
+
+        <p>
+            <strong>Untuk Node.js Bot:</strong>
+        </p>
+        <ul>
+            <li><code>pm2 start npm --name telegram-bot -- start</code></li>
+            <li>Atau jika ada start script: <code>pm2 start bot.js --name telegram-bot</code></li>
+        </ul>
+
+        <h3>4.3 Configure PM2 Startup</h3>
+        <ul>
+            <li>Save PM2 config: <code>pm2 save</code></li>
+            <li>Generate startup script: <code>pm2 startup</code></li>
+            <li>Copy dan jalankan command yang diberikan PM2</li>
+        </ul>
+
+        <h3>4.4 Monitor Bot dengan PM2</h3>
+        <ul>
+            <li>Cek status: <code>pm2 status</code></li>
+            <li>Lihat logs: <code>pm2 logs telegram-bot</code></li>
+            <li>Restart bot: <code>pm2 restart telegram-bot</code></li>
+            <li>Stop bot: <code>pm2 stop telegram-bot</code></li>
+        </ul>
+
+        <h2>Langkah 5: Alternative - Systemd Service</h2>
+        <p>
+            Alternatif PM2, gunakan systemd (native Linux):
+        </p>
+
+        <h3>5.1 Create Service File</h3>
+        <ul>
+            <li><code>sudo nano /etc/systemd/system/telegram-bot.service</code></li>
+            <li>Add konfigurasi (sesuaikan dengan path bot Anda):
+                <pre>
+[Unit]
+Description=Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=botuser
+WorkingDirectory=/home/botuser/your-telegram-bot
+ExecStart=/home/botuser/your-telegram-bot/venv/bin/python3 bot.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+                </pre>
+            </li>
+        </ul>
+
+        <h3>5.2 Enable dan Start Service</h3>
+        <ul>
+            <li>Reload systemd: <code>sudo systemctl daemon-reload</code></li>
+            <li>Enable service: <code>sudo systemctl enable telegram-bot</code></li>
+            <li>Start service: <code>sudo systemctl start telegram-bot</code></li>
+            <li>Cek status: <code>sudo systemctl status telegram-bot</code></li>
+        </ul>
+
+        <h2>Langkah 6: Test Bot 24/7</h2>
+        <ul>
+            <li>✅ Bot sudah running di background</li>
+            <li>✅ Test dengan kirim pesan ke bot dari Telegram</li>
+            <li>✅ Reboot VPS: <code>sudo reboot</code></li>
+            <li>✅ Setelah VPS up, bot harus auto-start</li>
+            <li>✅ Verify bot merespon pesan setelah reboot</li>
+        </ul>
+
+        <h2>Tips dan Best Practices</h2>
+        <ul>
+            <li>✅ <strong>Use Environment Variables:</strong> Jangan hardcode sensitive data</li>
+            <li>✅ <strong>Logging:</strong> Implement proper logging untuk debugging</li>
+            <li>✅ <strong>Error Handling:</strong> Handle exceptions gracefully</li>
+            <li>✅ <strong>Health Check:</strong> Implement health check endpoint</li>
+            <li>✅ <strong>Backup:</strong> Backup code dan database regularly</li>
+            <li>✅ <strong>Monitoring:</strong> Setup uptime monitoring (UptimeRobot, dll)</li>
+            <li>✅ <strong>Security:</strong> Keep dependencies updated</li>
+        </ul>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>Bot tidak merespon</h3>
+        <p>
+            Check logs: <code>pm2 logs telegram-bot</code> atau <code>journalctl -u telegram-bot</code>.
+            Verify bot token correct, cek internet connection VPS.
+        </p>
+
+        <h3>Bot crash terus</h3>
+        <p>
+            Check error logs, fix bugs di code. PM2 akan auto-restart, tapi fix root cause agar tidak loop.
+        </p>
+
+        <h3>VPS tidak bisa clone dari GitHub</h3>
+        <p>
+            Setup SSH keys atau gunakan personal access token. Atau upload code manual via SCP.
+        </p>
+
+        <h2>Scaling untuk Multiple Bots</h2>
+        <p>
+            Satu VPS bisa host multiple bot Telegram:
+        </p>
+        <ul>
+            <li>Deploy multiple bot di satu VPS dengan PM2</li>
+            <li>Atau gunakan Docker untuk containerization</li>
+            <li>Each bot run sebagai separate PM2 process</li>
+            <li>Monitor resource usage, upgrade VPS jika needed</li>
+        </ul>
+
+        <div class="cta-box">
+            <strong>Butuh Bantuan Sewa VPS untuk Bot Telegram?</strong>
+            <p style="margin-top:8px;margin-bottom:0;">
+                Ingin setup bot Telegram di VPS tapi tidak punya kartu kredit untuk sewa VPS (DigitalOcean,
+                Linode, dll)? <strong>dibayar.in</strong> siap membantu sewakan VPS sesuai kebutuhan!
+            </p>
+            <a href="https://wa.me/6282347303153?text=Halo%20kak%2C%20saya%20mau%20sewa%20VPS%20untuk%20bot%20Telegram%20via%20dibayar.in"
+                class="btn-wa" target="_blank" rel="noopener noreferrer">
+                Chat Admin - Sewa VPS Murah
+            </a>
+            <div class="note">
+                Kami bantu sewa VPS dari semua provider (DigitalOcean, Linode, Vultr, Hetzner, dll), setup
+                lengkap untuk bot Telegram Anda. Tanpa kartu kredit, bayar via QRIS atau transfer bank lokal!
+            </div>
+        </div>
+
+        <div class="related">
+            <h3>Artikel Terkait</h3>
+            <div class="related-links">
+                <a href="vps-murah-untuk-bot-10-provider-indonesia-termurah.html">VPS Murah untuk Bot</a>
+                <a href="vps-untuk-payment-bot.html">VPS untuk Payment Bot</a>
+                <a href="bot-whatsapp-automation-di-vps.html">Bot WhatsApp Automation di VPS</a>
+                <a href="apa-itu-clawdbot-dan-fungsinya.html">Apa Itu Clawdbot</a>
+                <a href="cara-bayar-vps-dan-api-ai-untuk-clawdbot.html">Cara Bayar VPS & API AI</a>
+                <a href="index.html">Kembali ke Halaman Utama</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

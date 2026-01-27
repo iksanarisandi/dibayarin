@@ -503,4 +503,48 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <!-- Additional ClawdBot & VPS Articles - New 2025 -->
+    <url>
+        <loc>https://dibayar.in/clawdbot-untuk-automasi-payment.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/setup-self-hosted-clawdbot-payment-bot-di-vps-linux.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/ai-powered-payment-automation-dengan-clawdbot-dan-vps.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/vps-murah-untuk-bot-10-provider-indonesia-termurah.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/cara-setup-vps-untuk-bot-telegram.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/vps-untuk-payment-bot.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/bot-whatsapp-automation-di-vps.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 </urlset>

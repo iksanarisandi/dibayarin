@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Self-Hosted Clawdbot Payment Bot di VPS Linux: Complete Implementation | dibayar.in</title>
+    <meta name="description"
+        content="Panduan lengkap setup self-hosted Clawdbot payment bot di VPS Linux. Tutorial implementasi payment bot dengan Clawdbot dari awal sampai production-ready.">
+    <meta name="keywords"
+        content="setup Clawdbot di VPS, Clawdbot payment bot Linux, VPS untuk Clawdbot, self-hosted payment bot, implementasi Clawdbot">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dibayar.in/setup-self-hosted-clawdbot-payment-bot-di-vps-linux.html">
+    <meta name="author" content="dibayar.in">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dibayar.in/setup-self-hosted-clawdbot-payment-bot-di-vps-linux.html">
+    <meta property="og:title" content="Setup Self-Hosted Clawdbot Payment Bot di VPS Linux: Complete Implementation">
+    <meta property="og:description"
+        content="Tutorial lengkap implementasi Clawdbot payment bot di VPS Linux.">
+    <meta property="og:locale" content="id_ID">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Setup Self-Hosted Clawdbot Payment Bot di VPS Linux: Complete Implementation",
+        "author": { "@type": "Organization", "name": "dibayar.in" },
+        "publisher": { "@type": "Organization", "name": "dibayar.in" },
+        "datePublished": "2025-01-27",
+        "dateModified": "2025-01-27"
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.7;
+            margin: 0
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 24px 20px
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0070ba;
+            margin-bottom: 24px;
+            display: inline-block
+        }
+
+        .logo span {
+            color: #2c3e50
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: #95a5a6;
+            margin-bottom: 20px
+        }
+
+        .breadcrumb a {
+            color: #0070ba
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            line-height: 1.3
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 28px;
+            margin-bottom: 8px
+        }
+
+        h3 {
+            font-size: 17px;
+            margin-top: 20px;
+            margin-bottom: 6px
+        }
+
+        p {
+            color: #6c7a89;
+            margin-bottom: 12px
+        }
+
+        ul,
+        ol {
+            color: #6c7a89;
+            margin-left: 20px;
+            margin-bottom: 12px
+        }
+
+        li {
+            margin-bottom: 6px
+        }
+
+        .highlight-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #e74c3c
+        }
+
+        .steps-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05)
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e6ed
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: #0070ba;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .step-content h4 {
+            margin: 0 0 4px 0;
+            color: #2c3e50;
+            font-size: 16px
+        }
+
+        .step-content p {
+            margin: 0;
+            font-size: 14px
+        }
+
+        .cta-box {
+            margin-top: 32px;
+            padding: 24px;
+            border-radius: 12px;
+            background: #e8f4fc
+        }
+
+        .btn-wa {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 14px 24px;
+            border-radius: 8px;
+            background: #25D366;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px
+        }
+
+        .btn-wa:hover {
+            background: #20bd5a
+        }
+
+        .note {
+            font-size: 13px;
+            color: #95a5a6;
+            margin-top: 16px
+        }
+
+        .related {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid #e0e6ed
+        }
+
+        .related h3 {
+            font-size: 18px;
+            margin-bottom: 16px
+        }
+
+        .related-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .related-links a {
+            color: #0070ba;
+            font-size: 14px
+        }
+
+        .related-links a:hover {
+            text-decoration: underline
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="logo">dibayar<span>.in</span></a>
+
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> › <a href="apa-itu-clawdbot-dan-fungsinya.html">ClawdBot</a> › Setup
+            Payment Bot di VPS
+        </nav>
+
+        <h1>Setup Self-Hosted Clawdbot Payment Bot di VPS Linux: Complete Implementation</h1>
+        <p>
+            Panduan lengkap dan praktis untuk setup <strong>self-hosted Clawdbot payment bot</strong> di VPS Linux.
+            Dari provision VPS, install dependensi, konfigurasi Clawdbot, sampai payment bot siap running 24/7
+            di production environment.
+        </p>
+
+        <div class="highlight-box">
+            <strong>💡 Apa yang Akan Anda Pelajari:</strong> Setup complete payment bot infrastructure dengan
+            Clawdbot, termasuk VPS configuration, API integration, security hardening, dan monitoring.
+        </div>
+
+        <h2>Prerequisites: Apa yang Dibutuhkan</h2>
+        <ul>
+            <li><strong>VPS Linux:</strong> Ubuntu 20.04/22.04 atau Debian (2GB RAM minimal, 4GB recommended)</li>
+            <li><strong>API Key:</strong> OpenAI API key atau Anthropic Claude API key</li>
+            <li><strong>Domain:</strong> Domain opsional untuk webhook endpoint</li>
+            <li><strong>Payment Gateway:</strong> Akun Midtrans/Xendit/Stripe untuk payment processing</li>
+            <li><strong>Basic Linux Knowledge:</strong> Familiar dengan command line dan SSH</li>
+        </ul>
+
+        <h2>Architecture Overview</h2>
+        <p>
+            <strong>Stack yang Akan Kita Setup:</strong>
+        </p>
+        <ul>
+            <li><strong>VPS:</strong> Ubuntu/Debian server di DigitalOcean, Linode, atau provider lain</li>
+            <li><strong>Clawdbot:</strong> AI engine untuk processing dan automasi</li>
+            <li><strong>Database:</strong> PostgreSQL untuk transaction data</li>
+            <li><strong>Webhook Server:</strong> Flask/FastAPI untuk menerima payment notification</li>
+            <li><strong>Process Manager:</strong> PM2 atau systemd untuk keep bot running</li>
+            <li><strong>Reverse Proxy:</strong> Nginx untuk SSL dan domain routing</li>
+        </ul>
+
+        <h2>Langkah 1: Provision dan Setup VPS</h2>
+        <h3>1.1 Create VPS Instance</h3>
+        <ul>
+            <li>Login ke provider (DigitalOcean, Linode, Vultr, dll)</li>
+            <li>Create new droplet/server dengan spesifikasi:
+                <ul>
+                    <li>OS: Ubuntu 22.04 LTS</li>
+                    <li>Plan: Basic, 2GB RAM, 1 CPU, 40GB SSD</li>
+                    <li>Location: Singapore (terdekat ke Indonesia)</li>
+                </ul>
+            </li>
+            <li>Set SSH key untuk secure access</li>
+        </ul>
+
+        <h3>1.2 Initial Server Setup</h3>
+        <p>Setelah VPS ready, SSH ke server:</p>
+        <code>ssh root@your-vps-ip</code>
+        <p>Kemudian jalankan initial setup:</p>
+        <ul>
+            <li>Update system: <code>apt update && apt upgrade -y</code></li>
+            <li>Create non-root user: <code>adduser clawdbot</code></li>
+            <li>Grant sudo privileges: <code>usermod -aG sudo clawdbot</code></li>
+            <li>Setup firewall: <code>ufw allow OpenSSH && ufw enable</code></li>
+        </ul>
+
+        <h2>Langkah 2: Install Dependensi</h2>
+        <h3>2.1 Install Python & Tools</h3>
+        <ul>
+            <li>Install Python 3: <code>apt install python3 python3-pip python3-venv -y</code></li>
+            <li>Install Node.js (jika needed): <code>curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt install nodejs -y</code></li>
+            <li>Install Git: <code>apt install git -y</code></li>
+        </ul>
+
+        <h3>2.2 Install Database</h3>
+        <ul>
+            <li>Install PostgreSQL: <code>apt install postgresql postgresql-contrib -y</code></li>
+            <li>Create database untuk payment bot:
+                <ul>
+                    <li><code>sudo -u postgres psql</code></li>
+                    <li><code>CREATE DATABASE paymentbot;</code></li>
+                    <li><code>CREATE USER clawdbot WITH PASSWORD 'REPLACE_WITH_SECURE_PASS';</code></li>
+                    <li><code>GRANT ALL PRIVILEGES ON DATABASE paymentbot TO clawdbot;</code></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>2.3 Install Nginx</h3>
+        <ul>
+            <li><code>apt install nginx -y</code></li>
+            <li><code>ufw allow 'Nginx Full'</code></li>
+        </ul>
+
+        <h2>Langkah 3: Setup Clawdbot</h2>
+        <h3>3.1 Clone dan Install Clawdbot</h3>
+        <ul>
+            <li>Switch ke clawdbot user: <code>su - clawdbot</code></li>
+            <li>Clone repository: <code>git clone https://github.com/your-clawdbot-fork.git</code></li>
+            <li>Enter directory: <code>cd clawdbot</code></li>
+            <li>Create virtual environment: <code>python3 -m venv venv</code></li>
+            <li>Activate: <code>source venv/bin/activate</code></li>
+            <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+        </ul>
+
+        <h3>3.2 Konfigurasi Environment</h3>
+        <p>Buat file <code>.env</code> dengan konfigurasi:</p>
+        <ul>
+            <li><strong>OpenAI API Key:</strong> <code>OPENAI_API_KEY=YOUR_OPENAI_KEY_HERE</code></li>
+            <li><strong>Database URL:</strong> Format postgresql connection string (ganti USER dan PASSWORD)</li>
+            <li><strong>Payment Gateway Keys:</strong> Midtrans/Xendit/Stripe keys</li>
+            <li><strong>Bot Tokens:</strong> Telegram/WhatsApp bot tokens</li>
+            <li><strong>Security:</strong> JWT secret, encryption keys</li>
+        </ul>
+
+        <h2>Langkah 4: Setup Payment Integration</h2>
+        <h3>4.1 Payment Gateway Configuration</h3>
+        <ul>
+            <li>Setup Midtrans/Xendit account</li>
+            <li>Get API keys (Server Key dan Client Key)</li>
+            <li>Configure webhook URL dalam dashboard payment gateway</li>
+            <li>Test payment flow dengan sandbox environment</li>
+        </ul>
+
+        <h3>4.2 Implement Webhook Handler</h3>
+        <p>Setup webhook endpoint untuk menerima payment notification:</p>
+        <ul>
+            <li>Create Flask/FastAPI application</li>
+            <li>Define webhook endpoint (misal: <code>/webhook/payment</code>)</li>
+            <li>Verify webhook signature untuk security</li>
+            <li>Process payment notification dan update database</li>
+            <li>Trigger Clawdbot untuk send notification ke customer</li>
+        </ul>
+
+        <h2>Langkah 5: Setup Process Manager</h2>
+        <h3>5.1 Install PM2</h3>
+        <ul>
+            <li><code>npm install -g pm2</code></li>
+            <li>Create ecosystem file: <code>pm2 init</code></li>
+            <li>Edit ecosystem.config.js dengan konfigurasi bot</li>
+        </ul>
+
+        <h3>5.2 Start Bot dengan PM2</h3>
+        <ul>
+            <li><code>pm2 start payment-bot.py --name clawdbot-payment</code></li>
+            <li>Save PM2 config: <code>pm2 save</code></li>
+            <li>Setup startup script: <code>pm2 startup</code></li>
+        </ul>
+
+        <h2>Langkah 6: Setup SSL dan Domain</h2>
+        <h3>6.1 Setup Nginx Reverse Proxy</h3>
+        <p>Create nginx config di <code>/etc/nginx/sites-available/paymentbot</code>:</p>
+        <ul>
+            <li>Configure upstream ke application (port 8000 atau lainnya)</li>
+            <li>Setup server block dengan domain Anda</li>
+            <li>Enable config: <code>ln -s /etc/nginx/sites-available/paymentbot /etc/nginx/sites-enabled/</code></li>
+            <li>Test dan restart nginx: <code>nginx -t && systemctl restart nginx</code></li>
+        </ul>
+
+        <h3>6.2 Setup SSL dengan Let's Encrypt</h3>
+        <ul>
+            <li>Install Certbot: <code>apt install certbot python3-certbot-nginx -y</code></li>
+            <li>Get SSL certificate: <code>certbot --nginx -d yourdomain.com</code></li>
+            <li>Setup auto-renewal (certbot handle ini otomatis)</li>
+        </ul>
+
+        <h2>Langkah 7: Security Hardening</h2>
+        <ul>
+            <li>✅ <strong>Firewall:</strong> Only allow necessary ports (80, 443, SSH)</li>
+            <li>✅ <strong>SSH:</strong> Disable password login, gunakan key-based auth</li>
+            <li>✅ <strong>App Secrets:</strong> Store dalam environment variables, jangan hardcode</li>
+            <li>✅ <strong>Database:</strong> Strong password, restrict remote access</li>
+            <li>✅ <strong>Rate Limiting:</strong> Implement rate limiting di Nginx/App level</li>
+            <li>✅ <strong>Monitoring:</strong> Setup log monitoring dan alerting</li>
+        </ul>
+
+        <h2>Langkah 8: Testing dan Deployment</h2>
+        <h3>8.1 Testing Payment Flow</h3>
+        <ul>
+            <li>Test dengan sandbox environment payment gateway</li>
+            <li>Verify webhook endpoint menerima notification</li>
+            <li>Confirm bot mengirim notifikasi ke customer</li>
+            <li>Check database transaction ter-record dengan benar</li>
+        </ul>
+
+        <h3>8.2 Go Live</h3>
+        <ul>
+            <li>Switch payment gateway ke production mode</li>
+            <li>Monitor logs untuk beberapa jam pertama</li>
+            <li>Have rollback plan siap jika ada issues</li>
+            <li>Setup monitoring dan alerting (opsional: UptimeRobot, PagerDuty)</li>
+        </ul>
+
+        <h2>Maintenance dan Monitoring</h2>
+        <ul>
+            <li>📊 <strong>Logs:</strong> Check bot logs regularly: <code>pm2 logs clawdbot-payment</code></li>
+            <li>📊 <strong>Database:</strong> Backup database regularly (cron job)</li>
+            <li>📊 <strong>Updates:</strong> Keep dependencies updated untuk security patches</li>
+            <li>📊 <strong>Performance:</strong> Monitor CPU, RAM, dan disk usage</li>
+            <li>📊 <strong>Uptime:</strong> Setup uptime monitoring</li>
+        </ul>
+
+        <h2>Troubleshooting Common Issues</h2>
+        <ul>
+            <li><strong>Bot tidak start:</strong> Check logs, verify API keys, test database connection</li>
+            <li><strong>Webhook tidak ter接收:</strong> Verify nginx config, check firewall, test SSL</li>
+            <li><strong>Payment not processing:</strong> Verify payment gateway credentials, check sandbox/production mode</li>
+            <li><strong>High memory usage:</strong> Consider upgrade VPS atau optimize code</li>
+            <li><strong>Bot crash:</strong> Setup auto-restart dengan PM2, implement error handling</li>
+        </ul>
+
+        <div class="cta-box">
+            <strong>Butuh Bantuan Setup VPS dan API untuk Payment Bot?</strong>
+            <p style="margin-top:8px;margin-bottom:0;">
+                Jika Anda tidak punya kartu kredit untuk sewa VPS (DigitalOcean, Linode, dll) atau beli API key
+                (OpenAI, Claude), <strong>dibayar.in</strong> siap membantu setup complete payment bot infrastructure!
+            </p>
+            <a href="https://wa.me/6282347303153?text=Halo%20kak%2C%20saya%20butuh%20bantuan%20setup%20VPS%20dan%20API%20untuk%20Clawdbot%20payment%20bot%20via%20dibayar.in"
+                class="btn-wa" target="_blank" rel="noopener noreferrer">
+                Chat Admin - Setup VPS & API
+            </a>
+            <div class="note">
+                Kami bantu sewa VPS, beli API key AI, setup payment gateway integration, dan konfigurasi lengkap.
+                Tanpa kartu kredit, bayar via QRIS atau transfer bank lokal!
+            </div>
+        </div>
+
+        <div class="related">
+            <h3>Artikel Terkait</h3>
+            <div class="related-links">
+                <a href="apa-itu-clawdbot-dan-fungsinya.html">Apa Itu Clawdbot dan Fungsinya</a>
+                <a href="clawdbot-untuk-automasi-payment.html">Clawdbot untuk Automasi Payment</a>
+                <a href="kebutuhan-vps-dan-api-untuk-clawdbot.html">Kebutuhan VPS dan API untuk ClawdBot</a>
+                <a href="vps-untuk-payment-bot.html">VPS untuk Payment Bot</a>
+                <a href="cara-bayar-vps-dan-api-ai-untuk-clawdbot.html">Cara Bayar VPS & API AI</a>
+                <a href="index.html">Kembali ke Halaman Utama</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
