@@ -471,4 +471,36 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- ClawdBot Articles - New 2025 -->
+    <url>
+        <loc>https://dibayar.in/apa-itu-clawdbot-dan-fungsinya.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/cara-install-dan-setup-clawdbot.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/clawdbot-untuk-produktivitas-dan-automasi.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/kebutuhan-vps-dan-api-untuk-clawdbot.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/cara-bayar-vps-dan-api-ai-untuk-clawdbot.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 </urlset>
