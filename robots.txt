@@ -1,18 +1,56 @@
 # robots.txt for dibayar.in
 # Jasa Pembayaran Internasional Tanpa Kartu Kredit
 
+# Allow all crawlers by default
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://dibayar.in/sitemap.xml
 
-# Disallow internal/admin paths (if any)
+# Disallow internal/admin paths
+Disallow: /admin/
 Disallow: /.kiro/
 Disallow: /.vscode/
 Disallow: /.git/
 
-# Allow all search engines to crawl
+# === AI/LLM Crawlers - Explicitly Allow ===
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Google AI Training (Gemini, etc)
+User-agent: Google-Extended
+Allow: /
+
+# Claude / Anthropic AI
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Common Crawl (source for many AI models)
+User-agent: CCBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Brave Search AI
+User-agent: BraveBot
+Allow: /
+
+# === Traditional Search Engines ===
 User-agent: Googlebot
 Allow: /
 
@@ -25,5 +63,5 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Crawl-delay for polite crawling (optional)
-Crawl-delay: 1
+User-agent: Baiduspider
+Allow: /
