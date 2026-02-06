@@ -572,8 +572,20 @@
                             <option value="ChatGPT">ChatGPT</option>
                             <option value="Gemini">Gemini</option>
                             <option value="Minimax">Minimax</option>
+                            <option value="Github Copilot">Github Copilot</option>
+                            <option value="Trae">Trae</option>
+                            <option value="Cursor">Cursor</option>
+                            <option value="Topup Paypal">Topup Paypal</option>
+                            <option value="Notion">Notion</option>
+                            <option value="Kie Ai">Kie Ai</option>
+                            <option value="OpenAI Api">OpenAI Api</option>
                             <option value="Lainnya">Lainnya</option>
                         </select>
+                    </div>
+
+                    <div class="form-group" id="lainnyaGroup" style="display:none;">
+                        <label for="platformLainnya">Nama Platform</label>
+                        <input type="text" id="platformLainnya" placeholder="Masukkan nama platform lainnya">
                     </div>
 
                     <div class="form-group">
@@ -596,6 +608,16 @@
                     </div>
                     <p class="qris-note">Scan QR code di atas untuk melakukan pembayaran</p>
                 </div>
+            </div>
+
+            <!-- Testimoni Section -->
+            <div style="text-align:center;margin-top:40px;padding-top:30px;border-top:1px solid #e0e6ed;">
+                <h3 style="font-size:20px;font-weight:600;margin-bottom:16px;color:#2c3e50;">Intip Testimoni</h3>
+                <p style="font-size:14px;color:#6c7a89;margin-bottom:20px;">Lihat apa kata pelanggan kami tentang layanan dibayar.in</p>
+                <a href="https://s.id/testidibayarin" target="_blank"
+                   style="display:inline-block;padding:12px 30px;background:#25D366;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:15px;transition:background 0.3s;">
+                    Lihat Testimoni
+                </a>
             </div>
         </div>
     </section>
@@ -1151,6 +1173,7 @@
         function handleWhatsAppClick() {
             const nama = document.getElementById('nama').value.trim();
             const platform = document.getElementById('platform').value;
+            const platformLainnya = document.getElementById('platformLainnya').value.trim();
             const usd = parseFloat(document.getElementById('formUsd').value) || 0;
 
             if (!nama) {
@@ -1161,6 +1184,10 @@
                 alert('Silakan pilih platform');
                 return;
             }
+            if (platform === 'Lainnya' && !platformLainnya) {
+                alert('Silakan masukkan nama platform lainnya');
+                return;
+            }
             if (usd <= 0) {
                 alert('Silakan masukkan nominal USD');
                 return;
@@ -1168,15 +1195,28 @@
 
             const total = calculateTotal(usd);
             const totalFormatted = formatRupiah(total);
+            const finalPlatform = platform === 'Lainnya' ? platformLainnya : platform;
 
             const message = `Nama: ${nama}
-Platform: ${platform}
+Platform: ${finalPlatform}
 Nominal USD: ${usd}
 Total Bayar IDR: ${totalFormatted}`;
 
             const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
             window.open(waUrl, '_blank');
         }
+
+        // Handle platform selection - show/hide "Lainnya" input field
+        document.getElementById('platform').addEventListener('change', function() {
+            const lainnyaGroup = document.getElementById('lainnyaGroup');
+            if (this.value === 'Lainnya') {
+                lainnyaGroup.style.display = 'block';
+                document.getElementById('platformLainnya').focus();
+            } else {
+                lainnyaGroup.style.display = 'none';
+                document.getElementById('platformLainnya').value = '';
+            }
+        });
 
         // Event listeners
         document.getElementById('heroUsd').addEventListener('input', updateHeroDisplay);
