@@ -105,6 +105,37 @@
     }
     </script>
 
+    <!-- LocalBusiness Schema for Geo Targeting -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "dibayar.in",
+      "alternateName": "dibayar.in - Jasa Pembayaran Layanan Internasional",
+      "url": "https://dibayar.in/",
+      "logo": "https://dibayar.in/icon.svg",
+      "description": "Jasa pembayaran ChatGPT, Claude, dan AI tools tanpa kartu kredit di Indonesia. Melayani pembayaran internasional via QRIS, transfer bank, dan e-wallet.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Indonesia"
+      },
+      "priceRange": "$$",
+      "currenciesAccepted": "IDR",
+      "paymentAccepted": ["QRIS", "Bank Transfer", "Dana", "OVO", "GoPay", "ShopeePay"],
+      "telephone": "+62-823-4730-3153",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": ["Indonesian", "English"],
+        "telephone": "+62-823-4730-3153"
+      },
+      "sameAs": [
+        "https://wa.me/6282347303153"
+      ]
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -452,6 +483,84 @@
             fill: #fff;
         }
 
+        /* AI Platform Logos Marquee Section */
+        .ai-logos-section {
+            padding: 50px 0;
+            background: #fff;
+            border-top: 1px solid #e0e6ed;
+            border-bottom: 1px solid #e0e6ed;
+            overflow: hidden;
+        }
+
+        .ai-logos-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .ai-logos-track {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            animation: scrollLeft 30s linear infinite;
+        }
+
+        .ai-logos-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ai-logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            min-width: 80px;
+        }
+
+        .ai-logo-item img {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: #f8fafc;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .ai-logo-item:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 112, 186, 0.2);
+            background: #fff;
+        }
+
+        .ai-logo-item span {
+            font-size: 12px;
+            color: #6c7a89;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .ai-logos-section-title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .ai-logos-section-title span {
+            color: #0070ba;
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             .steps-grid {
@@ -475,6 +584,19 @@
             .calc-card,
             .order-form {
                 padding: 24px;
+            }
+
+            .ai-logos-track {
+                gap: 40px;
+            }
+
+            .ai-logo-item img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .ai-logo-item span {
+                font-size: 10px;
             }
         }
     </style>
@@ -618,6 +740,219 @@
                    style="display:inline-block;padding:12px 30px;background:#25D366;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:15px;transition:background 0.3s;">
                     Lihat Testimoni
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Platform Logos Marquee Section -->
+    <section class="ai-logos-section">
+        <div class="container">
+            <p class="ai-logos-section-title">Kami Melayani Pembayaran untuk <span>150+ Platform AI</span> di Seluruh Dunia</p>
+            <div class="ai-logos-container">
+                <div class="ai-logos-track">
+                    <!-- First Set -->
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openai.png" alt="ChatGPT">
+                        <span>ChatGPT</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/claude-color.png" alt="Claude">
+                        <span>Claude</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/gemini-color.png" alt="Gemini">
+                        <span>Gemini</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/githubcopilot.png" alt="GitHub Copilot">
+                        <span>GitHub Copilot</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cursor.png" alt="Cursor">
+                        <span>Cursor</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/kimi-color.png" alt="Kimi">
+                        <span>Kimi</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/lovable-color.png" alt="Lovable">
+                        <span>Lovable</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/zai.png" alt="Zai">
+                        <span>Zai</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/trae-color.png" alt="Trae">
+                        <span>Trae</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cline.png" alt="Cline">
+                        <span>Cline</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/windsurf.png" alt="Windsurf">
+                        <span>Windsurf</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/grok.png" alt="Grok">
+                        <span>Grok</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/deepseek-color.png" alt="DeepSeek">
+                        <span>DeepSeek</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/perplexity-color.png" alt="Perplexity">
+                        <span>Perplexity</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/copilot-color.png" alt="Copilot">
+                        <span>Copilot</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openrouter.png" alt="OpenRouter">
+                        <span>OpenRouter</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/poe-color.png" alt="Poe">
+                        <span>Poe</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/mistral-color.png" alt="Mistral">
+                        <span>Mistral</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/groq.png" alt="Groq">
+                        <span>Groq</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/qwen-color.png" alt="Qwen">
+                        <span>Qwen</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/huggingface-color.png" alt="HuggingFace">
+                        <span>HuggingFace</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cohere-color.png" alt="Cohere">
+                        <span>Cohere</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/midjourney.png" alt="Midjourney">
+                        <span>Midjourney</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/runway.png" alt="Runway">
+                        <span>Runway</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/elevenlabs.png" alt="ElevenLabs">
+                        <span>ElevenLabs</span>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openai.png" alt="ChatGPT">
+                        <span>ChatGPT</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/claude-color.png" alt="Claude">
+                        <span>Claude</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/gemini-color.png" alt="Gemini">
+                        <span>Gemini</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/githubcopilot.png" alt="GitHub Copilot">
+                        <span>GitHub Copilot</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cursor.png" alt="Cursor">
+                        <span>Cursor</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/kimi-color.png" alt="Kimi">
+                        <span>Kimi</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/lovable-color.png" alt="Lovable">
+                        <span>Lovable</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/zai.png" alt="Zai">
+                        <span>Zai</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/trae-color.png" alt="Trae">
+                        <span>Trae</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cline.png" alt="Cline">
+                        <span>Cline</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/windsurf.png" alt="Windsurf">
+                        <span>Windsurf</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/grok.png" alt="Grok">
+                        <span>Grok</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/deepseek-color.png" alt="DeepSeek">
+                        <span>DeepSeek</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/perplexity-color.png" alt="Perplexity">
+                        <span>Perplexity</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/copilot-color.png" alt="Copilot">
+                        <span>Copilot</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openrouter.png" alt="OpenRouter">
+                        <span>OpenRouter</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/poe-color.png" alt="Poe">
+                        <span>Poe</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/mistral-color.png" alt="Mistral">
+                        <span>Mistral</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/groq.png" alt="Groq">
+                        <span>Groq</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/qwen-color.png" alt="Qwen">
+                        <span>Qwen</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/huggingface-color.png" alt="HuggingFace">
+                        <span>HuggingFace</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cohere-color.png" alt="Cohere">
+                        <span>Cohere</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/midjourney.png" alt="Midjourney">
+                        <span>Midjourney</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/runway.png" alt="Runway">
+                        <span>Runway</span>
+                    </div>
+                    <div class="ai-logo-item">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/elevenlabs.png" alt="ElevenLabs">
+                        <span>ElevenLabs</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
