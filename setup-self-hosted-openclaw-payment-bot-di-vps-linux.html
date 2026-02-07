@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setup Self-Hosted Clawdbot Payment Bot di VPS Linux: Complete Implementation | dibayar.in</title>
+    <title>Setup Self-Hosted openclaw Payment Bot di VPS Linux: Complete Implementation | dibayar.in</title>
     <meta name="description"
-        content="Panduan lengkap setup self-hosted Clawdbot payment bot di VPS Linux. Tutorial implementasi payment bot dengan Clawdbot dari awal sampai production-ready.">
+        content="Panduan lengkap setup self-hosted openclaw payment bot di VPS Linux. Tutorial implementasi payment bot dengan openclaw dari awal sampai production-ready.">
     <meta name="keywords"
-        content="setup Clawdbot di VPS, Clawdbot payment bot Linux, VPS untuk Clawdbot, self-hosted payment bot, implementasi Clawdbot">
+        content="setup openclaw di VPS, openclaw payment bot Linux, VPS untuk openclaw, self-hosted payment bot, implementasi openclaw">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://dibayar.in/setup-self-hosted-clawdbot-payment-bot-di-vps-linux.html">
+    <link rel="canonical" href="https://dibayar.in/setup-self-hosted-openclaw-payment-bot-di-vps-linux.html">
     <meta name="author" content="dibayar.in">
 
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://dibayar.in/setup-self-hosted-clawdbot-payment-bot-di-vps-linux.html">
-    <meta property="og:title" content="Setup Self-Hosted Clawdbot Payment Bot di VPS Linux: Complete Implementation">
+    <meta property="og:url" content="https://dibayar.in/setup-self-hosted-openclaw-payment-bot-di-vps-linux.html">
+    <meta property="og:title" content="Setup Self-Hosted openclaw Payment Bot di VPS Linux: Complete Implementation">
     <meta property="og:description"
-        content="Tutorial lengkap implementasi Clawdbot payment bot di VPS Linux.">
+        content="Tutorial lengkap implementasi openclaw payment bot di VPS Linux.">
     <meta property="og:locale" content="id_ID">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Setup Self-Hosted Clawdbot Payment Bot di VPS Linux: Complete Implementation",
+        "headline": "Setup Self-Hosted openclaw Payment Bot di VPS Linux: Complete Implementation",
         "author": { "@type": "Organization", "name": "dibayar.in" },
         "publisher": { "@type": "Organization", "name": "dibayar.in" },
         "datePublished": "2025-01-27",
@@ -233,20 +233,20 @@
         <a href="index.html" class="logo">dibayar<span>.in</span></a>
 
         <nav class="breadcrumb">
-            <a href="index.html">Home</a> › <a href="apa-itu-clawdbot-dan-fungsinya.html">ClawdBot</a> › Setup
+            <a href="index.html">Home</a> › <a href="apa-itu-openclaw-dan-fungsinya.html">openclaw</a> › Setup
             Payment Bot di VPS
         </nav>
 
-        <h1>Setup Self-Hosted Clawdbot Payment Bot di VPS Linux: Complete Implementation</h1>
+        <h1>Setup Self-Hosted openclaw Payment Bot di VPS Linux: Complete Implementation</h1>
         <p>
-            Panduan lengkap dan praktis untuk setup <strong>self-hosted Clawdbot payment bot</strong> di VPS Linux.
-            Dari provision VPS, install dependensi, konfigurasi Clawdbot, sampai payment bot siap running 24/7
+            Panduan lengkap dan praktis untuk setup <strong>self-hosted openclaw payment bot</strong> di VPS Linux.
+            Dari provision VPS, install dependensi, konfigurasi openclaw, sampai payment bot siap running 24/7
             di production environment.
         </p>
 
         <div class="highlight-box">
             <strong>💡 Apa yang Akan Anda Pelajari:</strong> Setup complete payment bot infrastructure dengan
-            Clawdbot, termasuk VPS configuration, API integration, security hardening, dan monitoring.
+            openclaw, termasuk VPS configuration, API integration, security hardening, dan monitoring.
         </div>
 
         <h2>Prerequisites: Apa yang Dibutuhkan</h2>
@@ -264,7 +264,7 @@
         </p>
         <ul>
             <li><strong>VPS:</strong> Ubuntu/Debian server di DigitalOcean, Linode, atau provider lain</li>
-            <li><strong>Clawdbot:</strong> AI engine untuk processing dan automasi</li>
+            <li><strong>openclaw:</strong> AI engine untuk processing dan automasi</li>
             <li><strong>Database:</strong> PostgreSQL untuk transaction data</li>
             <li><strong>Webhook Server:</strong> Flask/FastAPI untuk menerima payment notification</li>
             <li><strong>Process Manager:</strong> PM2 atau systemd untuk keep bot running</li>
@@ -291,8 +291,8 @@
         <p>Kemudian jalankan initial setup:</p>
         <ul>
             <li>Update system: <code>apt update && apt upgrade -y</code></li>
-            <li>Create non-root user: <code>adduser clawdbot</code></li>
-            <li>Grant sudo privileges: <code>usermod -aG sudo clawdbot</code></li>
+            <li>Create non-root user: <code>adduser openclaw</code></li>
+            <li>Grant sudo privileges: <code>usermod -aG sudo openclaw</code></li>
             <li>Setup firewall: <code>ufw allow OpenSSH && ufw enable</code></li>
         </ul>
 
@@ -311,8 +311,8 @@
                 <ul>
                     <li><code>sudo -u postgres psql</code></li>
                     <li><code>CREATE DATABASE paymentbot;</code></li>
-                    <li><code>CREATE USER clawdbot WITH PASSWORD 'REPLACE_WITH_SECURE_PASS';</code></li>
-                    <li><code>GRANT ALL PRIVILEGES ON DATABASE paymentbot TO clawdbot;</code></li>
+                    <li><code>CREATE USER openclaw WITH PASSWORD 'REPLACE_WITH_SECURE_PASS';</code></li>
+                    <li><code>GRANT ALL PRIVILEGES ON DATABASE paymentbot TO openclaw;</code></li>
                 </ul>
             </li>
         </ul>
@@ -323,12 +323,12 @@
             <li><code>ufw allow 'Nginx Full'</code></li>
         </ul>
 
-        <h2>Langkah 3: Setup Clawdbot</h2>
-        <h3>3.1 Clone dan Install Clawdbot</h3>
+        <h2>Langkah 3: Setup openclaw</h2>
+        <h3>3.1 Clone dan Install openclaw</h3>
         <ul>
-            <li>Switch ke clawdbot user: <code>su - clawdbot</code></li>
-            <li>Clone repository: <code>git clone https://github.com/your-clawdbot-fork.git</code></li>
-            <li>Enter directory: <code>cd clawdbot</code></li>
+            <li>Switch ke openclaw user: <code>su - openclaw</code></li>
+            <li>Clone repository: <code>git clone https://github.com/your-openclaw-fork.git</code></li>
+            <li>Enter directory: <code>cd openclaw</code></li>
             <li>Create virtual environment: <code>python3 -m venv venv</code></li>
             <li>Activate: <code>source venv/bin/activate</code></li>
             <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
@@ -360,7 +360,7 @@
             <li>Define webhook endpoint (misal: <code>/webhook/payment</code>)</li>
             <li>Verify webhook signature untuk security</li>
             <li>Process payment notification dan update database</li>
-            <li>Trigger Clawdbot untuk send notification ke customer</li>
+            <li>Trigger openclaw untuk send notification ke customer</li>
         </ul>
 
         <h2>Langkah 5: Setup Process Manager</h2>
@@ -373,7 +373,7 @@
 
         <h3>5.2 Start Bot dengan PM2</h3>
         <ul>
-            <li><code>pm2 start payment-bot.py --name clawdbot-payment</code></li>
+            <li><code>pm2 start payment-bot.py --name openclaw-payment</code></li>
             <li>Save PM2 config: <code>pm2 save</code></li>
             <li>Setup startup script: <code>pm2 startup</code></li>
         </ul>
@@ -424,7 +424,7 @@
 
         <h2>Maintenance dan Monitoring</h2>
         <ul>
-            <li>📊 <strong>Logs:</strong> Check bot logs regularly: <code>pm2 logs clawdbot-payment</code></li>
+            <li>📊 <strong>Logs:</strong> Check bot logs regularly: <code>pm2 logs openclaw-payment</code></li>
             <li>📊 <strong>Database:</strong> Backup database regularly (cron job)</li>
             <li>📊 <strong>Updates:</strong> Keep dependencies updated untuk security patches</li>
             <li>📊 <strong>Performance:</strong> Monitor CPU, RAM, dan disk usage</li>
@@ -446,7 +446,7 @@
                 Jika Anda tidak punya kartu kredit untuk sewa VPS (DigitalOcean, Linode, dll) atau beli API key
                 (OpenAI, Claude), <strong>dibayar.in</strong> siap membantu setup complete payment bot infrastructure!
             </p>
-            <a href="https://wa.me/6282347303153?text=Halo%20kak%2C%20saya%20butuh%20bantuan%20setup%20VPS%20dan%20API%20untuk%20Clawdbot%20payment%20bot%20via%20dibayar.in"
+            <a href="https://wa.me/6282347303153?text=Halo%20kak%2C%20saya%20butuh%20bantuan%20setup%20VPS%20dan%20API%20untuk%20openclaw%20payment%20bot%20via%20dibayar.in"
                 class="btn-wa" target="_blank" rel="noopener noreferrer">
                 Chat Admin - Setup VPS & API
             </a>
@@ -459,11 +459,11 @@
         <div class="related">
             <h3>Artikel Terkait</h3>
             <div class="related-links">
-                <a href="apa-itu-clawdbot-dan-fungsinya.html">Apa Itu Clawdbot dan Fungsinya</a>
-                <a href="clawdbot-untuk-automasi-payment.html">Clawdbot untuk Automasi Payment</a>
-                <a href="kebutuhan-vps-dan-api-untuk-clawdbot.html">Kebutuhan VPS dan API untuk ClawdBot</a>
+                <a href="apa-itu-openclaw-dan-fungsinya.html">Apa Itu openclaw dan Fungsinya</a>
+                <a href="openclaw-untuk-automasi-payment.html">openclaw untuk Automasi Payment</a>
+                <a href="kebutuhan-vps-dan-api-untuk-openclaw.html">Kebutuhan VPS dan API untuk openclaw</a>
                 <a href="vps-untuk-payment-bot.html">VPS untuk Payment Bot</a>
-                <a href="cara-bayar-vps-dan-api-ai-untuk-clawdbot.html">Cara Bayar VPS & API AI</a>
+                <a href="cara-bayar-vps-dan-api-ai-untuk-openclaw.html">Cara Bayar VPS & API AI</a>
                 <a href="index.html">Kembali ke Halaman Utama</a>
             </div>
         </div>
