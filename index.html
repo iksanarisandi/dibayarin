@@ -662,7 +662,7 @@
                         <span id="heroKursDasar">—</span>
                     </div>
                     <div class="calc-row">
-                        <span>Kurs Setelah Markup (+Rp <span id="heroMarkupValue">1.100</span>)</span>
+                        <span>Kurs Penyesuaian Visa</span>
                         <span id="heroKursMarkup">—</span>
                     </div>
                     <div class="calc-row">
@@ -1601,7 +1601,6 @@
 
             document.getElementById('heroKursDasar').textContent = kursDasar > 0 ? formatRupiah(kursDasar) : '—';
             document.getElementById('heroKursMarkup').textContent = kursMarkup > 0 ? formatRupiah(kursMarkup) : '—';
-            document.getElementById('heroMarkupValue').textContent = CONFIG.MARKUP.toLocaleString('id-ID');
             document.getElementById('heroFeeValue').textContent = CONFIG.FEE.toLocaleString('id-ID');
 
             if (usd > 0 && kursMarkup > 0) {
