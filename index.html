@@ -662,12 +662,12 @@
                         <span id="heroKursDasar">—</span>
                     </div>
                     <div class="calc-row">
-                        <span>Kurs Penyesuaian Visa</span>
+                        <span>Kurs Setelah Markup (+Rp <span id="heroMarkupValue">1.100</span>)</span>
                         <span id="heroKursMarkup">—</span>
                     </div>
                     <div class="calc-row">
                         <span>Fee Tetap</span>
-                        <span>Rp 50.000</span>
+                        <span>Rp <span id="heroFeeValue">50.000</span></span>
                     </div>
                     <div class="calc-total">
                         <span>Total Bayar</span>
@@ -1559,13 +1559,11 @@
         </div>
     </footer>
 
+    <script src="config.js"></script>
     <script>
         // Global variables
         let kursDasar = 0;
         let kursMarkup = 0;
-        const FEE = 50000;
-        const MARKUP = 1000;
-        const WA_NUMBER = '6282347303153';
 
         // Fetch exchange rate from API
         async function fetchKurs() {
@@ -1574,14 +1572,14 @@
                 const data = await response.json();
                 if (data.result === 'success') {
                     kursDasar = data.rates.IDR;
-                    kursMarkup = kursDasar + MARKUP;
+                    kursMarkup = kursDasar + CONFIG.MARKUP;
                     updateHeroDisplay();
                 }
             } catch (error) {
                 console.error('Error fetching exchange rate:', error);
                 // Fallback rate if API fails
                 kursDasar = 16000;
-                kursMarkup = kursDasar + MARKUP;
+                kursMarkup = kursDasar + CONFIG.MARKUP;
             }
         }
 
@@ -1593,7 +1591,7 @@
         // Calculate total
         function calculateTotal(usd) {
             if (!usd || usd <= 0) return 0;
-            return (usd * kursMarkup) + FEE;
+            return (usd * kursMarkup) + CONFIG.FEE;
         }
 
         // Update hero section display
@@ -1603,6 +1601,8 @@
 
             document.getElementById('heroKursDasar').textContent = kursDasar > 0 ? formatRupiah(kursDasar) : '—';
             document.getElementById('heroKursMarkup').textContent = kursMarkup > 0 ? formatRupiah(kursMarkup) : '—';
+            document.getElementById('heroMarkupValue').textContent = CONFIG.MARKUP.toLocaleString('id-ID');
+            document.getElementById('heroFeeValue').textContent = CONFIG.FEE.toLocaleString('id-ID');
 
             if (usd > 0 && kursMarkup > 0) {
                 const total = calculateTotal(usd);
@@ -1657,7 +1657,7 @@ Platform: ${finalPlatform}
 Nominal USD: ${usd}
 Total Bayar IDR: ${totalFormatted}`;
 
-            const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+            const waUrl = `https://wa.me/${CONFIG.WA_NUMBER}?text=${encodeURIComponent(message)}`;
             window.open(waUrl, '_blank');
         }
 
