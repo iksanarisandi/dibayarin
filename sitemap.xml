@@ -573,4 +573,36 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <!-- 2026 Jasa Pembayaran Kartu Kredit & PayPal Articles - NEW -->
+    <url>
+        <loc>https://dibayar.in/jasa-pembayaran-kartu-kredit-visa-mastercard-online.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/cara-langganan-layanan-internasional-tanpa-kartu-kredit.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/jasa-bayar-kartu-kredit-untuk-disimpan-hari-ini.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/beli-saldo-paypal-jasa-pembayaran-kartu-kredit.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/jual-jasa-pembayaran-kartu-kredit.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
