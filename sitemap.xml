@@ -637,4 +637,24 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://dibayar.in/syarat-ketentuan.html</loc>
+        <lastmod>2026-02-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/privacy-policy.html</loc>
+        <lastmod>2026-02-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dibayar.in/ketentuan-refund.html</loc>
+        <lastmod>2026-02-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
