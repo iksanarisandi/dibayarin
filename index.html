@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://open.er-api.com" crossorigin>
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://open.er-api.com">
     <title>dibayar.in - Jasa Pembayaran ChatGPT, Claude, dan AI Tools Tanpa Kartu Kredit (Indonesia)</title>
 
     <!-- SEO Meta Tags -->
@@ -23,6 +29,9 @@
     <meta property="og:description"
         content="Bayar Claude, ChatGPT, Gemini dan layanan AI lainnya dengan mudah. Kurs kompetitif, proses cepat, pembayaran via QRIS.">
     <meta property="og:image" content="https://dibayar.in/ogimage.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="dibayar.in - Jasa Pembayaran AI Tanpa Kartu Kredit">
     <meta property="og:locale" content="id_ID">
 
     <!-- Twitter -->
@@ -115,6 +124,19 @@
       "url": "https://dibayar.in/",
       "logo": "https://dibayar.in/icon.svg",
       "description": "Jasa pembayaran ChatGPT, Claude, dan AI tools tanpa kartu kredit di Indonesia. Melayani pembayaran internasional via QRIS, transfer bank, dan e-wallet.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. S Dg Jarung Malino",
+        "addressLocality": "Gowa",
+        "addressRegion": "Sulawesi Selatan",
+        "postalCode": "92111",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-5.3287",
+        "longitude": "119.8523"
+      },
       "areaServed": {
         "@type": "Country",
         "name": "Indonesia"
@@ -123,15 +145,101 @@
       "currenciesAccepted": "IDR",
       "paymentAccepted": ["QRIS", "Bank Transfer", "Dana", "OVO", "GoPay", "ShopeePay"],
       "telephone": "+62-823-4730-3153",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "06:00",
+        "closes": "23:00"
+      },
+      "specialOpeningHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "description": "Kadang melayani di luar jam operasional jika admin aktif"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
         "areaServed": "ID",
         "availableLanguage": ["Indonesian", "English"],
-        "telephone": "+62-823-4730-3153"
+        "telephone": "+62-823-4730-3153",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "06:00",
+          "closes": "23:00"
+        }
       },
       "sameAs": [
-        "https://wa.me/6282347303153"
+        "https://wa.me/6282347303153",
+        "https://s.id/testidibayarin"
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema for Navigation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dibayar.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Form Pemesanan",
+          "item": "https://dibayar.in/#order"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Syarat & Ketentuan",
+          "item": "https://dibayar.in/syarat-ketentuan.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Privacy Policy",
+          "item": "https://dibayar.in/privacy-policy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Ketentuan Refund",
+          "item": "https://dibayar.in/ketentuan-refund.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "dibayar.in",
+      "url": "https://dibayar.in/",
+      "logo": "https://dibayar.in/icon.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-823-4730-3153",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": ["Indonesian", "English"]
+      },
+      "sameAs": [
+        "https://wa.me/6282347303153",
+        "https://s.id/testidibayarin"
       ]
     }
     </script>
@@ -763,7 +871,7 @@
                 <div class="qris-section">
                     <h3>Scan QRIS untuk Pembayaran</h3>
                     <div class="qris-card">
-                        <img src="qris.jpg" alt="QRIS Payment">
+                        <img src="qris.jpg" alt="QRIS Payment - Scan untuk pembayaran" loading="lazy" width="280" height="280">
                     </div>
                     <p class="qris-note">Scan QR code di atas untuk melakukan pembayaran</p>
                 </div>
@@ -793,92 +901,92 @@
                 <div class="ai-logos-track">
                     <!-- First Set - Row 1 -->
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openai.png" alt="ChatGPT">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openai.png" alt="ChatGPT" loading="lazy">
                         <span>ChatGPT</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/claude-color.png"
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/claude-color.png" loading="lazy"
                             alt="Claude">
                         <span>Claude</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/gemini-color.png"
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/gemini-color.png" loading="lazy"
                             alt="Gemini">
                         <span>Gemini</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/githubcopilot.png"
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/githubcopilot.png" loading="lazy"
                             alt="GitHub Copilot">
                         <span>GitHub Copilot</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cursor.png" alt="Cursor">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cursor.png" alt="Cursor" loading="lazy">
                         <span>Cursor</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/windsurf.png" alt="Windsurf">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/windsurf.png" alt="Windsurf" loading="lazy">
                         <span>Windsurf</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cline.png" alt="Cline">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cline.png" alt="Cline" loading="lazy">
                         <span>Cline</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/lovable-color.png"
-                            alt="Lovable">
+                            alt="Lovable" loading="lazy">
                         <span>Lovable</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/v0.png" alt="V0">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/v0.png" alt="V0" loading="lazy">
                         <span>V0</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/trae-color.png" alt="Trae">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/trae-color.png" alt="Trae" loading="lazy">
                         <span>Trae</span>
                     </div>
                     <!-- Duplicate for seamless loop -->
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openai.png" alt="ChatGPT">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openai.png" alt="ChatGPT" loading="lazy">
                         <span>ChatGPT</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/claude-color.png"
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/claude-color.png" loading="lazy"
                             alt="Claude">
                         <span>Claude</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/gemini-color.png"
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/gemini-color.png" loading="lazy"
                             alt="Gemini">
                         <span>Gemini</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/githubcopilot.png"
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/githubcopilot.png" loading="lazy"
                             alt="GitHub Copilot">
                         <span>GitHub Copilot</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cursor.png" alt="Cursor">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cursor.png" alt="Cursor" loading="lazy">
                         <span>Cursor</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/windsurf.png" alt="Windsurf">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/windsurf.png" alt="Windsurf" loading="lazy">
                         <span>Windsurf</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cline.png" alt="Cline">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cline.png" alt="Cline" loading="lazy">
                         <span>Cline</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/lovable-color.png"
-                            alt="Lovable">
+                            alt="Lovable" loading="lazy">
                         <span>Lovable</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/v0.png" alt="V0">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/v0.png" alt="V0" loading="lazy">
                         <span>V0</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/trae-color.png" alt="Trae">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/trae-color.png" alt="Trae" loading="lazy">
                         <span>Trae</span>
                     </div>
                 </div>
@@ -890,93 +998,93 @@
                     <!-- First Set - Row 2 -->
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/deepseek-color.png"
-                            alt="DeepSeek">
+                            alt="DeepSeek" loading="lazy">
                         <span>DeepSeek</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/perplexity-color.png"
-                            alt="Perplexity">
+                            alt="Perplexity" loading="lazy">
                         <span>Perplexity</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/grok.png" alt="Grok">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/grok.png" alt="Grok" loading="lazy">
                         <span>Grok</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/mistral-color.png"
-                            alt="Mistral">
+                            alt="Mistral" loading="lazy">
                         <span>Mistral</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/copilot-color.png"
-                            alt="Copilot">
+                            alt="Copilot" loading="lazy">
                         <span>Copilot</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/zai.png" alt="Zai">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/zai.png" alt="Zai" loading="lazy">
                         <span>Zai</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/kimi-color.png" alt="Kimi">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/kimi-color.png" alt="Kimi" loading="lazy">
                         <span>Kimi</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/poe-color.png" alt="Poe">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/poe-color.png" alt="Poe" loading="lazy">
                         <span>Poe</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/groq.png" alt="Groq">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/groq.png" alt="Groq" loading="lazy">
                         <span>Groq</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openrouter.png"
-                            alt="OpenRouter">
+                            alt="OpenRouter" loading="lazy">
                         <span>OpenRouter</span>
                     </div>
                     <!-- Duplicate for seamless loop -->
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/deepseek-color.png"
-                            alt="DeepSeek">
+                            alt="DeepSeek" loading="lazy">
                         <span>DeepSeek</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/perplexity-color.png"
-                            alt="Perplexity">
+                            alt="Perplexity" loading="lazy">
                         <span>Perplexity</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/grok.png" alt="Grok">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/grok.png" alt="Grok" loading="lazy">
                         <span>Grok</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/mistral-color.png"
-                            alt="Mistral">
+                            alt="Mistral" loading="lazy">
                         <span>Mistral</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/copilot-color.png"
-                            alt="Copilot">
+                            alt="Copilot" loading="lazy">
                         <span>Copilot</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/zai.png" alt="Zai">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/zai.png" alt="Zai" loading="lazy">
                         <span>Zai</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/kimi-color.png" alt="Kimi">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/kimi-color.png" alt="Kimi" loading="lazy">
                         <span>Kimi</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/poe-color.png" alt="Poe">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/poe-color.png" alt="Poe" loading="lazy">
                         <span>Poe</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/groq.png" alt="Groq">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/groq.png" alt="Groq" loading="lazy">
                         <span>Groq</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/openrouter.png"
-                            alt="OpenRouter">
+                            alt="OpenRouter" loading="lazy">
                         <span>OpenRouter</span>
                     </div>
                 </div>
@@ -987,92 +1095,92 @@
                 <div class="ai-logos-track">
                     <!-- First Set - Row 3 (with new icons) -->
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/qwen-color.png" alt="Qwen">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/qwen-color.png" alt="Qwen" loading="lazy">
                         <span>Qwen</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/huggingface-color.png"
-                            alt="HuggingFace">
+                            alt="HuggingFace" loading="lazy">
                         <span>HuggingFace</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cohere-color.png"
-                            alt="Cohere">
+                            alt="Cohere" loading="lazy">
                         <span>Cohere</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/midjourney.png"
-                            alt="Midjourney">
+                            alt="Midjourney" loading="lazy">
                         <span>Midjourney</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/runway.png" alt="Runway">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/runway.png" alt="Runway" loading="lazy">
                         <span>Runway</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/elevenlabs.png"
-                            alt="ElevenLabs">
+                            alt="ElevenLabs" loading="lazy">
                         <span>ElevenLabs</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/sora-color.png" alt="Sora">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/sora-color.png" alt="Sora" loading="lazy">
                         <span>Sora</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/notion.png" alt="Notion">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/notion.png" alt="Notion" loading="lazy">
                         <span>Notion</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/figma-color.png" alt="Figma">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/figma-color.png" alt="Figma" loading="lazy">
                         <span>Figma</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/vercel.png" alt="Vercel">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/vercel.png" alt="Vercel" loading="lazy">
                         <span>Vercel</span>
                     </div>
                     <!-- Duplicate for seamless loop -->
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/qwen-color.png" alt="Qwen">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/qwen-color.png" alt="Qwen" loading="lazy">
                         <span>Qwen</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/huggingface-color.png"
-                            alt="HuggingFace">
+                            alt="HuggingFace" loading="lazy">
                         <span>HuggingFace</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/cohere-color.png"
-                            alt="Cohere">
+                            alt="Cohere" loading="lazy">
                         <span>Cohere</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/midjourney.png"
-                            alt="Midjourney">
+                            alt="Midjourney" loading="lazy">
                         <span>Midjourney</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/runway.png" alt="Runway">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/runway.png" alt="Runway" loading="lazy">
                         <span>Runway</span>
                     </div>
                     <div class="ai-logo-item">
                         <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/elevenlabs.png"
-                            alt="ElevenLabs">
+                            alt="ElevenLabs" loading="lazy">
                         <span>ElevenLabs</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/sora-color.png" alt="Sora">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/sora-color.png" alt="Sora" loading="lazy">
                         <span>Sora</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/notion.png" alt="Notion">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/notion.png" alt="Notion" loading="lazy">
                         <span>Notion</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/figma-color.png" alt="Figma">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/figma-color.png" alt="Figma" loading="lazy">
                         <span>Figma</span>
                     </div>
                     <div class="ai-logo-item">
-                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/vercel.png" alt="Vercel">
+                        <img src="https://unpkg.com/@lobehub/icons-static-png@latest/light/vercel.png" alt="Vercel" loading="lazy">
                         <span>Vercel</span>
                     </div>
                 </div>
@@ -1704,6 +1812,20 @@
                 <a href="privacy-policy.html" style="color:#6c7a89;margin-right:16px;">Privacy Policy</a>
                 <a href="ketentuan-refund.html" style="color:#6c7a89;">Ketentuan Refund</a>
             </p>
+            <!-- GEO: Address & Hours for Local SEO -->
+            <div style="margin-top:20px;padding-top:16px;border-top:1px solid #3d566e;font-size:13px;color:#95a5a6;">
+                <p style="margin-bottom:8px;">
+                    <strong style="color:#fff;">Lokasi:</strong> Jl. S Dg Jarung Malino, Gowa, Sulawesi Selatan 92111
+                </p>
+                <p style="margin-bottom:8px;">
+                    <strong style="color:#fff;">Jam Operasional:</strong> 06.00 - 23.00 WITA (Kadang melayani di luar jam jika admin aktif)
+                </p>
+                <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=-5.3287,119.8523" target="_blank" rel="noopener" style="color:#0070ba;text-decoration:underline;">
+                        Lihat di Google Maps
+                    </a>
+                </p>
+            </div>
         </div>
     </footer>
 
