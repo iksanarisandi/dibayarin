@@ -5,7 +5,7 @@
 
 const CONFIG = {
     // Markup kurs per USD
-    MARKUP: 1100,
+    MARKUP: 1700,
 
     // Fee tetap per transaksi
     FEE: 50000,
